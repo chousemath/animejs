@@ -1,0 +1,210 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .container-main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .container-images {
+            width: 100vh;
+            height: 100vh;
+            background-color: #fffaf6;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-image-outer {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 100vh;
+        }
+
+        .box-image-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        .image-right {
+            width: 100vh;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .cover-left {
+            width: calc((100vw - 100vh) / 2);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999;
+            background-color: #000;
+        }
+
+        .cover-right {
+            width: calc((100vw - 100vh) / 2);
+            height: 100vh;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 999;
+            background-color: #000;
+        }
+
+        .container-text-outer {
+            width: 100vw;
+            height: 30vh;
+            position: absolute;
+            top: 124vh;
+            left: 0;
+            background-color: transparent;
+        }
+
+        .container-text-mid {
+            display: flex;
+            width: 100vh;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-text-inner {
+            margin-left: 10vh;
+            width: 60vh;
+            height: 30vh;
+            border-radius: 12px;
+            background-color: #fffaf6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text-top {
+            display: flex;
+            width: 100%;
+            height: 10vh;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 42px;
+            padding-left: 32px;
+        }
+
+        .text-bottom {
+            display: flex;
+            width: 100%;
+            height: 14vh;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 70px;
+            padding-left: 32px;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container-main">
+        <div class="container-images">
+            <img id="logo" src="images/test-001-logo.png" style="height: 200px; opacity: 0;" />
+        </div>
+    </div>
+
+    <div id="im001" class="box-image-outer">
+        <div class="box-image-inner">
+            <img class="image-right"
+                src="https://sc02.alicdn.com/kf/Hb74f8c4090524c7abf5148fb319e9b26A.jpg" />
+        </div>
+    </div>
+
+    <div id="im002" class="box-image-outer">
+        <div class="box-image-inner">
+            <img class="image-right"
+                src="https://cdn.shopify.com/s/files/1/0307/7970/3428/products/product-image-1186510828.jpg" />
+        </div>
+    </div>
+
+    <div id="im003" class="box-image-outer">
+        <div class="box-image-inner">
+            <img class="image-right"
+                src="https://images-na.ssl-images-amazon.com/images/I/61UFjeukDZL._AC_SL1200_.jpg" />
+        </div>
+    </div>
+
+    <div id="im004" class="box-image-outer">
+        <div class="box-image-inner">
+            <img class="image-right"
+                src="https://image.made-in-china.com/2f0j00CVjGigIFAPoB/N95-Mouth-Mask-Dust-Respirator-Washable-Reusable-Masks-Cotton-Unisex-Mouth-Muffle-for-Allergy-Asthma-Travel.jpg" />
+        </div>
+    </div>
+    
+    <div id="t001" class="container-text-outer">
+        <div class="container-text-mid">
+            <div class="container-text-inner">
+                <div class="text-top">Zanex Premium Masks</div>
+                <div class="text-bottom">$39.99</div>
+            </div>
+        </div>
+    </div>
+    <div id="t002" class="container-text-outer">
+        <div class="container-text-mid">
+            <div class="container-text-inner">
+                <div class="text-top">Vivarium Reusable Masks</div>
+                <div class="text-bottom">$27.99</div>
+            </div>
+        </div>
+    </div>
+    <div id="t003" class="container-text-outer">
+        <div class="container-text-mid">
+            <div class="container-text-inner">
+                <div class="text-top">Yalan High Fidelity</div>
+                <div class="text-bottom">$45.99</div>
+            </div>
+        </div>
+    </div>
+    <div id="t004" class="container-text-outer">
+        <div class="container-text-mid">
+            <div class="container-text-inner">
+                <div class="text-top">Varnex Clean Mask</div>
+                <div class="text-bottom">$55.99</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cover-left"></div>
+    <div class="cover-right"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"
+        integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
+    <script src="test-001.js"></script>
+</body>
+
+</html>
