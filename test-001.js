@@ -13,7 +13,17 @@ const vw = (v) => {
 const imSize = vh(100); // standard image size was set to the entire vertical height of the screen
 const tSize = vh(24); // height of the text box
 const delay = 7000; // standard amount of delay between showing each product image (in milliseconds)
+
 const easingSpring = 'spring(1, 80, 10, 0)'; // type of easing used for each product image
+/* The Anime.js documentation indicates that spring easing consists of the following properties:
+ * easing: 'spring(mass, stiffness, damping, velocity)'
+ * In order to get a better understanding of this kind of easing, I tried to imagine an actual physical spring.
+ * Mass: the amount of matter that your are moving around, I see it as the heft of the image
+ * Stiffness: the measure of the resistance offered by an elastic body to deformation
+ * Damping: produced by processes that dissipate the energy stored in the oscillation of a spring
+ * Velocity: the speed of an object in a particular direction
+*/
+
 const endDelayImage = 2000;
 const durImage = 1000;
 
