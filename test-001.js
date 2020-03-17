@@ -24,10 +24,11 @@ const easingSpring = 'spring(1, 80, 10, 0)'; // type of easing used for each pro
  * Velocity: the speed of an object in a particular direction
 */
 
-const endDelayImage = 2000;
-const durImage = 1000;
+const endDelayImage = 2000; // default amount of delay (in milliseconds) after a product image has been shown
+const durImage = 1000; // default time it takes for an image to be animated into the frame
 
 const animeImage = (id, delay) => {
+    // the Anime.js object that controls the animation of a product image into and out of the frame
     anime({
         targets: `#im${id}`,
         keyframes: [
@@ -37,9 +38,13 @@ const animeImage = (id, delay) => {
         loop: false
     });
 
+    // the Anime.js object that controls the animation of a product description into and out of the frame
     anime({
         targets: `#t${id}`,
         keyframes: [
+            // the animation of the product description is intentionally offset from the animation of the product image
+            // the description animates in a little bit after the product image
+            // the description also animates out a little be before the product image
             { translateY: -2 * tSize, duration: durImage, delay: delay + 400, endDelay: endDelayImage - 300, easing: easingSpring, },
             { translateY: 3 * tSize, duration: durImage, easing: easingSpring, },
         ],
@@ -50,11 +55,15 @@ const animeImage = (id, delay) => {
 anime({
     targets: '#logo',
     keyframes: [
+        // animate the opacity of the logo to make it visible at the start of the advertisement
         { opacity: ['0', '1'], easing: 'easeInOutQuad', duration: 1000, delay: 500, },
+        // and then animate the opacity of the logo to make it invisible when the advertisement is complete
         { opacity: ['1', '0'], easing: 'easeInOutQuad', duration: 2000, delay: 15000, },
     ],
     loop: false
 });
+
+// create separate Anime.js objects for each product image/description pair
 animeImage('001', 3000);
 animeImage('002', 6000);
 animeImage('003', 9000);
