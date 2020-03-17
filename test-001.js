@@ -1,17 +1,19 @@
+// the purpose of this function is to calculate vh values from within Javascript
 const vh = (v) => {
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     return (v * h) / 100;
 };
 
+// the purpose of this function is to calculate vw values from within Javascript
 const vw = (v) => {
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     return (v * w) / 100;
 };
 
-const imSize = vh(100);
-const tSize = vh(24);
-const delay = 7000;
-const easingSpring = 'spring(1, 80, 10, 0)';
+const imSize = vh(100); // standard image size was set to the entire vertical height of the screen
+const tSize = vh(24); // height of the text box
+const delay = 7000; // standard amount of delay between showing each product image (in milliseconds)
+const easingSpring = 'spring(1, 80, 10, 0)'; // type of easing used for each product image
 const endDelayImage = 2000;
 const durImage = 1000;
 
